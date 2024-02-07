@@ -1,0 +1,235 @@
+@import "./utils";
+
+.main_footer {
+  @include flexer(row, space-between, flex-start);
+  width: 90%;
+  height: fit-content;
+  padding: 2rem 5rem 0 5rem; 
+  flex-wrap: wrap;
+  gap: 2rem;
+  background-color: $color;
+  border-bottom: 1px solid $bcolor1;
+}
+
+.footer_header {
+  font-size: 3rem;
+  padding-top: 1rem;
+  font-weight: 600;
+}
+
+.address {
+  @include flexer(column, flex-start, start);
+  height: 15rem;
+  padding-top: 1rem;
+
+  h2 {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    @include linkHover();
+  }
+  p {
+    margin-bottom: 1.6rem;
+  }
+  
+  .social {
+    @include flexer();
+
+    h2 {
+      @include linkHover();
+      font-weight: bold;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .media{
+      @include flexer(row);
+    }
+
+    .social_link {
+      padding: 8px;
+      color: white;
+      font-size: 1.3rem;
+      margin: 5px 10px;
+      border-radius: 100px;
+      border: 2px solid $bcolor1;
+      @include flexer();
+      transition: 0.3s ease;
+      &:hover {
+        background: #000;
+      }
+    }
+
+    @media screen and (max-width:500px) {
+      @include flexer(column);
+    }
+  }
+}
+
+.hello {
+  height: 15rem;
+  padding-top: 1rem;
+  h2 {
+    @include linkHover();
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    width: fit-content;
+  }
+
+  .mail {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: white;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+}
+
+.foot {
+  @include flexer(row, space-between);
+  width: 80%;
+  height: 5vh;
+  margin-bottom: 0.7rem;
+  padding-top: 0.5rem;
+  font-family: "Antic Didone", serif;
+  flex-wrap: wrap;
+
+  .links {
+    a {
+      text-decoration: none;
+      font-family: "Antic Didone", serif;
+      color: white;
+      margin: 15px 5px;
+      @include linkHover();
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.footer {
+  background-color: $color;
+  @include flexer(column);
+  color: white;
+  width: 100vw;
+}
+@media only screen and (max-width: 1184px) {
+  .footer {
+    @include flexer(column);
+    color: white;
+    width: 100vw;
+  }
+  .main_footer {
+    height: fit-content;
+  }
+
+  .footer_header {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  .address {
+    height: fit-content;
+    margin-bottom: 1.5rem;
+  }
+
+  .hello {
+    margin-bottom: auto;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .main_footer{
+    padding: 2rem 0 0 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .foot {
+    padding-bottom: 2rem !important;
+    display: flex;
+    width: auto;
+    padding-left: 2rem;
+    text-align: center;
+
+    .copys {
+      text-align: center;
+      padding-top: 0.5rem;
+    }
+  }
+
+  .footer {
+    .main_footer {
+      .hello {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 429px) {
+  .foot {
+    display: flex;
+    text-align: center;
+    padding-left: 0;
+    .links {
+      display: none;
+    }
+
+    .copys {
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 2560px) and (min-width: 1700px) {
+  .bgfooter {
+    font-family: $font2;
+    .newsletter {
+      h2 {
+        font-size: 4.5rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .footer {
+    .main_footer {
+      .footer_header {
+        font-size: 4rem;
+        font-weight: 600;
+      }
+
+      .address {
+        h2 {
+          font-size: 2.2rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+      .hello {
+        h2 {
+          font-size: 2.2rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .foot {
+    .links {
+      a {
+        font-size: 1.8rem;
+      }
+    }
+    .copy {
+      font-size: 1.8rem;
+    }
+  }
+}

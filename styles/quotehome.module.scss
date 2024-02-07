@@ -1,0 +1,109 @@
+@import "./utils";
+
+.number {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  margin-top: 2rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5rem;
+
+  h2 {
+    text-align: center;
+    font-family: $font4;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .allquotes {
+    @include flexer();
+    flex-wrap: wrap;
+    text-align: center
+  }
+
+  .para {
+    @include flexer(column, center, flex-start);
+    text-align: center;
+    height: 34vh;
+    margin-top: 2rem;
+    transition: all 0.4s ease;
+    width: 45vw;
+
+    .line {
+      width: 40%;
+      margin-top: 2.4rem;
+    }
+
+    @media screen and (max-width:1024px) {
+      width: 48vw;
+    }
+  }
+  .logo {
+    color: $color;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+
+    @media screen and (max-width:330px) {
+      margin-bottom: .5rem;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.all {
+  @include flexer(column, center);
+  width: 100%;
+  .quote {
+    width: 80%;
+  }
+}
+
+.quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: black;
+}
+
+.author {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  .name {
+    font-weight: bold;
+    font-size: 1rem;
+    @include flexer(column);
+    color: black;
+
+    .expertise {
+      color: $color;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .number{
+    padding: 0;
+    padding-bottom: 2rem;
+    .allquotes{
+      @include flexer(column);
+    }
+
+    .para{
+      width: 100vw;
+      padding: 0;
+    }
+
+    .all{
+      width: 100%;
+
+      .quote{
+        width: 85%;
+      }
+    }
+  }
+}

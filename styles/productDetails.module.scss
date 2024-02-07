@@ -1,0 +1,50 @@
+@import "./utils";
+
+.product_detail {
+  height: 100%;
+  width: 100%;
+  @include flexer(column);
+}
+
+.body {
+  @include flexer(row);
+  width: 92%;
+  height: 100%;
+  .left {
+    width: 98%;
+    height: fit-content;
+  }
+  @media screen and (max-width: 1150px) {
+    @include flexer(column);
+    .left{
+      margin-bottom: 1rem;
+
+    }
+  }
+}
+
+.right {
+  height: fit-content;
+  width: 20%;
+  @include flexer(column, start, start);
+  margin-left: 2rem;
+
+  h2 {
+    text-align: start;
+    color: $color1;
+    font-weight: lighter;
+    justify-content: start;
+    font-family: "PT Serif", serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    span{
+      font-weight: bold;
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    width: 95%;
+    height: fit-content;
+  }
+}
